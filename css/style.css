@@ -11,9 +11,20 @@ body {
 }
 
 .container {
-    width: 1440px;
+    max-width: 1440px;
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
+}
+
+.title-column {
+    min-width: 500px;
+    max-width: 40%;
+    margin-bottom: 50px;
+}
+.screenshot-column {
+    display: flex;
+    align-items: flex-end;
 }
 
 .banner {
@@ -30,10 +41,6 @@ body {
     display: flex;
     justify-content: center;
     background-color: #FFFFFF;
-}
-
-.backdrop .column {
-    max-width: 640px;
 }
 
 h2 {
@@ -72,7 +79,9 @@ h2 {
 }
 
 .screenshot {
+    max-width: 100%;
     margin-top: 93px;
+    margin-left: 50px;
 }
 
 .button {
@@ -104,6 +113,13 @@ a, a:hover, a:visited, a:link, a:active {
 
 .backdrop .column {
     margin: 80px 0;
+    max-width: 620px;
+}
+.backdrop .column:first-child {
+    padding-right: 20px;
+}
+.backdrop .column:nth-child(2) {
+    padding-left: 20px;
 }
 
 footer {
@@ -138,4 +154,49 @@ footer {
     height: 30px;
     filter: invert(100%);
     margin-right: 10px;
+}
+
+@media only screen and (max-width: 1440px) {
+    .container {
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 1em;
+    }
+    .backdrop .container {
+        max-width: 720px;
+        padding: 0;
+    }
+    .backdrop .column:first-child {
+        margin-bottom: 0;
+        padding-right: 0;
+    }
+    .backdrop .column:nth-child(2) {
+        margin-top: 0;
+        padding-left: 0;
+    }
+    .screenshot {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .logo {
+        margin-top: 30px;
+        float: right;
+    }
+    .title {
+        margin-top: 100px;
+    }
+    .subtitle {
+        margin-bottom: 100px;
+    }
+    .logo-container {
+        width: 100%;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 696px) {
+    .sites {
+        columns: 1;
+    }
 }
