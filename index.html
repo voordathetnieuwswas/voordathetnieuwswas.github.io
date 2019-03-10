@@ -221,7 +221,7 @@
 <script src="javascript/is.min.js"></script>
 <script>
     if (!is.mobile()) {
-        if (is.chrome()) {
+        if (is.chrome() && !chrome.app.isInstalled) {
             document.querySelector('.button.chrome').style.display = 'flex';
         }
         if (is.firefox()) {
