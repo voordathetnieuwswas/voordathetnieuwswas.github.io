@@ -16,18 +16,18 @@
         </div>
         <h1 class="title">Voordat het nieuws was</h1>
         <p class="subtitle">zoekt stukken van de raad en staten bij het laatste nieuws</p>
-        <a class="button chrome" href="https://chrome.google.com/webstore/detail/hijjbpfljegcfbapbgaklfjiahbaeonp" onclick="event.preventDefault(); chrome.webstore.install();">
+        <!--<button class="button chrome" href="https://chrome.google.com/webstore/detail/hijjbpfljegcfbapbgaklfjiahbaeonp" onclick="chrome.webstore.install();">
             <img src="images/chrome.svg" alt="Google Chrome" /> Installeer
-        </a>
-        <a class="button firefox" href="#">Installeer</a>
-        <a class="button edge" href="#">Installeer</a>
+        </button>
+        <a class="button firefox" href="#">Installeer</a>-->
+        <!--<a class="button edge" href="#">Installeer</a>-->
         <p class="button-info">Deze extensie is beschikbaar voor:</p>
         <div class="browser-icons">
             <a class="browser-icon chrome" href="https://chrome.google.com/webstore/detail/hijjbpfljegcfbapbgaklfjiahbaeonp">
                 <img src="images/chrome.svg" alt="Google Chrome" title="Google Chrome" />
                 <span>Chrome</span>
             </a>
-            <a class="browser-icon firefox" href="@todo">
+            <a class="browser-icon firefox" href="https://addons.mozilla.org/nl/firefox/addon/voordat-het-nieuws-was/">
                 <img src="images/firefox.svg" alt="Mozilla Firefox" title="Mozilla Firefox" />
                 <span>Firefox</span>
             </a>
@@ -87,7 +87,7 @@
 
             <h2>Broncode</h2>
             <p>Oberon heeft de broncode van deze app beschikbaar gesteld als Open Source.</p>
-            <a href="">GitHub</a>
+            <a href="https://github.com/voordathetnieuwswas/voordathetnieuwswas-webextension">GitHub</a>
         </div>
         <div class="column">
             <p>Op dit moment doen de volgende provincies en gemeentes mee</p>
@@ -224,7 +224,7 @@
 <script src="javascript/is.min.js"></script>
 <script>
     if (!is.mobile()) {
-        if (is.chrome()) {
+        if (is.chrome() && !chrome.app.isInstalled) {
             document.querySelector('.button.chrome').style.display = 'flex';
         }
         if (is.firefox()) {
